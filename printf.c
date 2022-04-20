@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 			else if (*(format + 1) == 'b')
 			{
 				num = va_arg(ap, int);
-				num = cbinary(num);
+				num = cbinary(num, 0);
 				print_number(num);
 				d++;
 				format += 2;

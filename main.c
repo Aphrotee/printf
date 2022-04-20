@@ -40,6 +40,6 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%%r]\n");
-    _printf("binary:[%b]\n", 7);
+    _printf("binary:[%b, %b, %b]\n", 7, 3, 98);
     return (0);
 }

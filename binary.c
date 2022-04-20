@@ -1,25 +1,24 @@
 #include "main.h"
-#include <string.h>
-#include <stdlib.h>
 
 /**
  * cbinary - converts decimal to binary
  * @n: number to be converted
+ * @d: base 2 int
  *
  * Return: n in base 2
  */
-int cbinary(int n)
+int cbinary(int n, int d)
 {
-	int i, p, d;
-	char a[15];
+	int r;
 
-	n /= 2;
-	for(i = 0; n > 0; i++)
+	if (n == 1)
+		d = 1;
+	else
 	{
-		p = n % 2;
-		a[i] = p + '0';
-		n = n / 2;
+		r = n % 2;
+		n /= 2;
+		d = cbinary(n, r);
+		d = (10 * d) + r;
 	}
-	d = atoi(a);
 	return (d);
 }
