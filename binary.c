@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <stdlib.h>
 
 /**
  * cbinary - converts decimal to binary
@@ -9,15 +10,16 @@
  */
 int cbinary(int n)
 {
-	int i, *a, p, d;
+	int i, p, d;
+	char a[15];
 
+	n /= 2;
 	for(i = 0; n > 0; i++)
 	{
 		p = n % 2;
 		a[i] = p + '0';
 		n = n / 2;
 	}
-	a = strrev(a);
 	d = atoi(a);
 	return (d);
 }

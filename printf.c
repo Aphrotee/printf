@@ -11,7 +11,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int d = 0;
+	int d = 0, num;
 	va_list ap;
 	char charr, *ptr;
 
@@ -37,6 +37,21 @@ int _printf(const char *format, ...)
 			{
 				charr = va_arg(ap, int);
 				_putchar(charr);
+				d++;
+				format += 2;
+			}
+			else if (*(format + 1) == 'd')
+			{
+				num = va_arg(ap, int);
+				print_number(num);
+				d++;
+				format += 2;
+			}
+			else if (*(format + 1) == 'b')
+			{
+				num = va_arg(ap, int);
+				num = cbinary(num);
+				print_number(num);
 				d++;
 				format += 2;
 			}
