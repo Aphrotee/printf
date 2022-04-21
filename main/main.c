@@ -41,5 +41,9 @@ int main(void)
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%%r]\n");
     _printf("binary:[%b, %b, %b]\n", 7, 3, 98);
+    _printf("hex:[%X]\n", 98);
+    printf("hex:[%X]\n", 98);
+    _printf("octal:[%o]\n", 98);
+    printf("octal:[%o]\n", 98);
     return (0);
 }

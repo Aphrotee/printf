@@ -55,6 +55,20 @@ int _printf(const char *format, ...)
 				d++;
 				format += 2;
 			}
+			else if (*(format +1) == 'X')
+			{
+				num = va_arg(ap, int);
+				chex(num);
+				d++;
+				format += 2;
+			}
+			else if (*(format + 1) == 'o')
+			{
+				num = va_arg(ap, int);
+				coctal(num);
+				d++;
+				format += 2;
+			}
 			else
 			{
 				_putchar(*format);

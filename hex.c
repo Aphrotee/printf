@@ -1,15 +1,16 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * chex - converts decimal to hexadecimal
+ * chex - converts decimal to hexadecimal and prints it
  * @n: number to be converted
  *
- * Return: array of n in base 16
+ * Return: nothing
  */
-char *chex(int n)
+void chex(int n)
 {
 	int i = 1, j, temp;
-	char hex[50], hexdec[50];
+	char *hex[50];
 
 	while (n != 0)
 	{
@@ -22,12 +23,9 @@ char *chex(int n)
 		n = n / 16;
 	}
 	j = i - 1;
-	i = 1; 
 	while (j > 0)
 	{
-		hexdec[i] = hex[j];
-		i++;
+		_putchar(hex[j]);
 		j--;
 	}
-	return (hwxdwc);
 }
