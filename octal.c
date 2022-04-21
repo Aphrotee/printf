@@ -1,28 +1,26 @@
 #include "main.h"
 
 /**
- * coctal - converts decimal to base  and 8 prints it
+ * coctal - converts decimal to octal and prints it
  * @n: number to be converted
- * @d: base 8 int
  *
- * Return: n in base 8
+ * Return: nothing
  */
-int coctal(int n, int d)
+void coctal(int n)
 {
-	int r;
+	int i = 1, j, temp;
+	char oct[50];
 
-	if ((n >= 1) && (n <= 7))
+	while (n != 0)
 	{
-		d = n;
-		_putchar(d + '0');
+		temp = n % 8;
+		oct[i++] = temp;
+		n = n / 8;
 	}
-	else
+	j = i - 1;
+	while (j > 0)
 	{
-		r = n % 8;
-		n /= 8;
-		d = coctal(n, r);
-		_putchar(r + '0');
-		d = (10 * d) + r;
+		_putchar(oct[j]);
+		j--;
 	}
-	return (d);
 }
