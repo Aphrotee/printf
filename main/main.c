@@ -1,5 +1,5 @@
-#include <limits.h>
 #include <stdio.h>
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -11,6 +11,7 @@ int main(void)
 {
     int len;
     int len2;
+    void *i = (void *)&len;
     unsigned int ui;
     void *addr;
 
@@ -45,5 +46,7 @@ int main(void)
     printf("hex:[%X]\n", 98);
     _printf("octal:[%o]\n", 98);
     printf("octal:[%o]\n", 98);
+    _printf("Address:[%p]\n", i);
+    printf("Address:[%p]\n", i);
     return (0);
 }

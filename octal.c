@@ -6,14 +6,16 @@
  *
  * Return: nothing
  */
-void coctal(int n)
+void coctal(unsigned int n)
 {
-	int i = 1, j, temp;
+	int i = 1, j;
+	unsigned int temp;
 	char oct[50];
 
 	while (n != 0)
 	{
 		temp = n % 8;
+		temp += 48;
 		oct[i++] = temp;
 		n = n / 8;
 	}

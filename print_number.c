@@ -25,7 +25,31 @@ void print_number(int n)
 		}
 		else
 			_putchar(b + '0');
+	}
+	else
+		_putchar('0');
+}
+/**
+ * uprint_number - prints out unsigned input
+ * @n: unsigned int to be printed
+ *
+ * Return: nothing
+ */
+void uprint_number(unsigned int n)
+{
+	unsigned int a, b;
 
+	if (n != 0)
+	{
+		a = n / 10;
+		b = n % 10;
+		if (a != 0)
+		{
+			uprint_number(a);
+			_putchar(b + '0');
+		}
+		else
+			_putchar(b + '0');
 	}
 	else
 		_putchar('0');

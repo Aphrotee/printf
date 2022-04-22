@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdarg.h>
@@ -12,8 +13,10 @@
 int _printf(const char *format, ...)
 {
 	int d = 0, num;
+	unsigned int numm, m;
 	va_list ap;
-	char charr, *ptr;
+	char charr;
+	char *ptr;
 
 	va_start(ap, format);
 	if ((*format == '\0') || (format == NULL))
@@ -40,10 +43,26 @@ int _printf(const char *format, ...)
 				d++;
 				format += 2;
 			}
-			else if (*(format + 1) == 'd')
+			else if ((*(format + 1) == 'd') || (
+					*(format  + 1) == 'i'))
 			{
 				num = va_arg(ap, int);
 				print_number(num);
+				d++;
+				format += 2;
+			}
+			else if ((*format + 1) == 'u')
+			{
+				numm = va_arg(ap, int);
+				uprint_number(numm);
+				d++;
+				format += 2;
+			}
+			else if (*(format + 1) == 'p')
+			{
+				m = va_arg(ap, int);
+				ptr = getp(m);
+				printf("%s", ptr);
 				d++;
 				format += 2;
 			}
@@ -55,17 +74,24 @@ int _printf(const char *format, ...)
 				d++;
 				format += 2;
 			}
-			else if (*(format +1) == 'X')
+			else if (*(format + 1) == 'X')
 			{
-				num = va_arg(ap, int);
-				chex(num);
+				numm = va_arg(ap, int);
+				chex(numm);
+				d++;
+				format += 2;
+			}
+			else if (*(format + 1) == 'x')
+			{
+				numm = va_arg(ap, int);
+				low_hex(numm);
 				d++;
 				format += 2;
 			}
 			else if (*(format + 1) == 'o')
 			{
-				num = va_arg(ap, int);
-				coctal(num);
+				numm = va_arg(ap, int);
+				coctal(numm);
 				d++;
 				format += 2;
 			}

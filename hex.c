@@ -7,9 +7,10 @@
  *
  * Return: nothing
  */
-void chex(int n)
+void chex(unsigned int n)
 {
-	int i = 1, j, temp;
+	int i = 1, j;
+	unsigned int temp;
 	char hex[50];
 
 	while (n != 0)
@@ -30,14 +31,15 @@ void chex(int n)
 	}
 }
 /**
- * Chex - converts decimal to hexadecimal and prints it
+ * low_hex - converts decimal to hexadecimal and prints it
  * @n: number to be converted
  *
  * Return: nothing
  */
-void Chex(int n)
+void low_hex(unsigned int n)
 {
-	int i = 1, j, temp;
+	int i = 1, j;
+       	unsigned int temp;
 	char hex[50];
 
 	while (n != 0)
