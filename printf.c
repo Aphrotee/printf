@@ -62,7 +62,11 @@ int _printf(const char *format, ...)
 			{
 				m = va_arg(ap, int);
 				ptr = getp(m);
-				printf("%s", ptr);
+				while (*ptr != '\0')
+				{
+					_putchar(*ptr);
+					ptr++;
+				}
 				d++;
 				format += 2;
 			}
