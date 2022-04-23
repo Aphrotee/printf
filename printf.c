@@ -76,9 +76,9 @@ int _printf(const char *format, ...)
 			}
 			else if (*(format + 1) == 'b')
 			{
-				num = va_arg(ap, int);
-				num = cbinary(num, 0);
-				d += print_number(num);
+				numm = va_arg(ap, int);
+				numm = cbinary(numm, 0);
+				d += uprint_number(numm);
 				format += 2;
 			}
 			else if (*(format + 1) == 'X')

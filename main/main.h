@@ -1,11 +1,11 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_number(int n);
-int cbinary(int n, int d);
-int rev_string(char *s);
+unsigned int cbinary(unsigned int n, unsigned int d);
+void rev_string(char *s);
 int chex(unsigned int n);
-int low_hex(unsigned int n);
+int low_hex(unsigned  int n);
 int coctal(unsigned int n);
 int uprint_number(unsigned int n);
 char *pts(void * x);
-char *getp(unsigned x);
+char *getp(unsigned int x);

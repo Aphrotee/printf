@@ -7,9 +7,9 @@
  *
  * Return: n in base 2
  */
-int cbinary(int n, int d)
+unsigned int cbinary(unsigned int n, unsigned int d)
 {
-	int r;
+	unsigned int r;
 
 	if (n == 1)
 		d = 1;
