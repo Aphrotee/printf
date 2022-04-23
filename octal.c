@@ -4,11 +4,11 @@
  * coctal - converts decimal to octal and prints it
  * @n: number to be converted
  *
- * Return: nothing
+ * Return: integer
  */
-void coctal(unsigned int n)
+int coctal(unsigned int n)
 {
-	int i = 1, j;
+	int i = 1, j, k = 0;
 	unsigned int temp;
 	char oct[50];
 
@@ -24,5 +24,7 @@ void coctal(unsigned int n)
 	{
 		_putchar(oct[j]);
 		j--;
+		k++;
 	}
+	return (k);
 }

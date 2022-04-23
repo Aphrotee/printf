@@ -5,11 +5,11 @@
  * chex - converts decimal to hexadecimal and prints it
  * @n: number to be converted
  *
- * Return: nothing
+ * Return: integer
  */
-void chex(unsigned int n)
+int chex(unsigned int n)
 {
-	int i = 1, j;
+	int i = 1, j, k = 0;
 	unsigned int temp;
 	char hex[50];
 
@@ -28,17 +28,19 @@ void chex(unsigned int n)
 	{
 		_putchar(hex[j]);
 		j--;
+		k++;
 	}
+	return (k);
 }
 /**
  * low_hex - converts decimal to hexadecimal and prints it
  * @n: number to be converted
  *
- * Return: nothing
+ * Return: integer
  */
-void low_hex(unsigned int n)
+int low_hex(unsigned int n)
 {
-	int i = 1, j;
+	int i = 1, j, k = 0;
        	unsigned int temp;
 	char hex[50];
 
@@ -57,5 +59,7 @@ void low_hex(unsigned int n)
 	{
 		_putchar(hex[j]);
 		j--;
+		k++;
 	}
+	return (k);
 }

@@ -25,7 +25,13 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			if (*(format + 1) == 's')
+			if (*(format + 1) == '%')
+			{
+				_putchar('%');
+				d++;
+				format += 2;
+			}
+			else if (*(format + 1) == 's')
 			{
 				ptr = va_arg(ap, char *);
 				while (*ptr != '\0')
@@ -47,15 +53,13 @@ int _printf(const char *format, ...)
 					*(format  + 1) == 'i'))
 			{
 				num = va_arg(ap, int);
-				print_number(num);
-				d++;
+				d += print_number(num);
 				format += 2;
 			}
-			else if ((*format + 1) == 'u')
+			else if (*(format + 1) == 'u')
 			{
 				numm = va_arg(ap, int);
-				uprint_number(numm);
-				d++;
+				d += uprint_number(numm);
 				format += 2;
 			}
 			else if (*(format + 1) == 'p')
@@ -74,29 +78,25 @@ int _printf(const char *format, ...)
 			{
 				num = va_arg(ap, int);
 				num = cbinary(num, 0);
-				print_number(num);
-				d++;
+				d += print_number(num);
 				format += 2;
 			}
 			else if (*(format + 1) == 'X')
 			{
 				numm = va_arg(ap, int);
-				chex(numm);
-				d++;
+				d += chex(numm);
 				format += 2;
 			}
 			else if (*(format + 1) == 'x')
 			{
 				numm = va_arg(ap, int);
-				low_hex(numm);
-				d++;
+				d += low_hex(numm);
 				format += 2;
 			}
 			else if (*(format + 1) == 'o')
 			{
 				numm = va_arg(ap, int);
-				coctal(numm);
-				d++;
+				d += coctal(numm);
 				format += 2;
 			}
 			else
